@@ -1,41 +1,78 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const FeaturedVideosContainer = styled.div`
-    display: grid;
-    grid-template-columns: 100% 1fr 1fr 1fr ;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "m m a a",
-                         "m m a a",
-                         "m m a a",
-                         "m m a a";
-    height: 80vh;
-    margin-top: 30px;
-    padding: 30px;
-    background-color: #9cc8ff;
-    a {
-        width: 50%;
-        text-decoration: none;
-    }
-`;
+export const FeaturedVideoContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: #c9ccff;
 
-export const FeaturedVideosGrid = styled.div`
+    margin-top: 2.5rem;
+    padding: 3.0rem;
 
-`
-export const FeaturedVideoMain = styled.div`
-    grid-area: 'm';
-    width: 50%;
-    height: 80%;
-    color: #000;
-    margin-right: 0;
-    a {
-        width: fit-content;
-    }
-    img {
-        width: 100%;
+    .videoThumb {
+        width: 95%;
+        object-fit: cover;
         border-radius: 12px;
     }
+
+    h1 {
+        font-size: 3.0rem;
+    }
+
+    p {
+        font-size: 2.0rem;
+        margin-bottom: 1.0rem;
+    }
 `
 
-export const FeaturedVideosAside = styled.div`
-    
+export const FeaturedVideo = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 95%;
+
+    div {
+        width: 95%;
+
+        .videoTitle {
+            font-size: 2.5rem;
+            margin: 5px 0;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 3; /* number of lines to show */
+            -webkit-box-orient: vertical;
+            word-break: break-word;
+        }
+
+        .videoDescription {
+            margin-bottom: 0;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 3; /* number of lines to show */
+            -webkit-box-orient: vertical;
+            word-break: break-word;
+        }
+
+        .videoViews {
+            color: #777;
+            margin-bottom: 0;
+        }
+
+        .videoDate {
+            margin: 0;
+            margin-top: 0.1rem;
+            color: #666;
+        }
+
+        .videoAuthor {
+            text-decoration: none;
+            font-size: 1.8rem;
+        }
+    }
 `

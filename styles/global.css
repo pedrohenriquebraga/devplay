@@ -7,7 +7,17 @@
     font-family: 'Nunito Sans';
 }
 
+html {
+    font-size: 62.5%;
+}
+
 body {
     width: 100%;
     height: 100%;
+}
+
+@media (max-width: 320px) {
+    html {
+        font-size: 50%;
+    }
 }
