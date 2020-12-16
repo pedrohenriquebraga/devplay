@@ -8,7 +8,7 @@ O serviço de **streaming de vídeos focado em programadores** que querem postar
 > Simples, no *YouTube* você tem que concorrer com muitas categorias diferentes como **games, música, notícias, e várias outras categorias**. Já no *DevPlay* só tem conteúdo de programação, então fica muito mais fácil ser achado e também de procurar conteúdos.
 
 ## ⚙️ Quais são as dependências dos projetos?
-- Next.js
-- Styled Components
+- [Next.js](https://nextjs.org/)
+- [Styled Components](https://styled-components.com/)
 
 *Mais dependências serão adicionadas conforme a necessidade*
