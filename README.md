@@ -10,3 +10,4 @@ O serviço de **streaming de vídeos focado em programadores** que querem postar
 ## ⚙️ Quais são as dependências dos projetos?
 - Next.js
 - Styled Components
+*Mais dependências serão adicionadas conforme a necessidade*
