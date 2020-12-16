@@ -3,6 +3,7 @@ import FeaturedVideoComp from "../src/components/FeaturedVideo"
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SearchForm } from '../styles/Form'
+import Link from 'next/link'
 
 export default function Home() {
   return (

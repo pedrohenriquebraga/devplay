@@ -9,7 +9,7 @@ export const FeaturedVideoContainer = styled.div`
     background-color: #c9ccff;
 
     margin-top: 2.5rem;
-    padding: 3.0rem;
+    padding: 5.0rem;
 
     .videoThumb {
         width: 95%;
@@ -24,6 +24,10 @@ export const FeaturedVideoContainer = styled.div`
     p {
         font-size: 2.0rem;
         margin-bottom: 1.0rem;
+    }
+    .openVideo {
+        text-decoration: none;
+        color: #000;
     }
 `
 
