@@ -21,3 +21,9 @@ body {
         font-size: 50%;
     }
 }
+
+@media(min-width: 1800px) {
+    html {
+        font-size: 75%;
+    }
+}

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FeaturedVideoContainer = styled.div`
+export const FeaturedVideoContainer = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,7 +48,7 @@ export const FeaturedVideo = styled.div`
             text-overflow: ellipsis;
             display: -webkit-box;
             overflow: hidden;
-            -webkit-line-clamp: 3; /* number of lines to show */
+            -webkit-line-clamp: 2; /* number of lines to show */
             -webkit-box-orient: vertical;
             word-break: break-word;
         }
