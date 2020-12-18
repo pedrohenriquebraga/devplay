@@ -11,7 +11,7 @@ export const VideosSectionsContainer = styled.main`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 3.0rem;
+  font-size: 3rem;
 `;
 
 export const VideosScrollingCards = styled.div`
@@ -51,6 +51,24 @@ export const VideoSections = styled.section`
   }
 `;
 
+export const VideoThumb = styled.figcaption`
+position: relative;
+  width: 100%;
+  .videoDuration {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 0.8rem 0.8rem 0;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    border-radius: 3px;
+  }
+`;
+
 export const VideoCard = styled.div`
   flex: 0 0 auto;
   width: 30rem;
@@ -60,13 +78,11 @@ export const VideoCard = styled.div`
   border-radius: 5px;
   margin-bottom: 1rem;
 
-  :hover {
-    background-color: #eee;
-  }
-
   img {
     width: 100%;
     border-radius: 8px;
+    position: absolute;
+    z-index: -1;
   }
 `;
 
