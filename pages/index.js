@@ -1,11 +1,10 @@
 import Header from "../src/components/Header";
 import FeaturedVideoComp from "../src/components/FeaturedVideo";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaSearch } from "react-icons/fa"
 import { SearchForm } from "../styles/Form";
 import { VideosSectionsContainer } from '../styles/VideosSection'
 import { VideosSectionsContainerComp } from "../src/components/VideosSectionsContainer"
-import Link from "next/link";
+import MoreVideos from "../src/components/MoreVideos"
 
 export default function Home() {
   return (
@@ -21,15 +20,16 @@ export default function Home() {
             spellCheck
           />
           <button type="submit">
-            <FontAwesomeIcon icon={faSearch} />
+            <FaSearch />
           </button>
         </div>
       </SearchForm>
         <FeaturedVideoComp />
       <VideosSectionsContainer>
-        <VideosSectionsContainerComp sectionTitle="Javascript" sectionIcon="FaJsSquare" />
-        <VideosSectionsContainerComp />
+        <VideosSectionsContainerComp sectionTitle="Javascript" />
+        <VideosSectionsContainerComp sectionTitle="PHP" />
       </VideosSectionsContainer>
+      <MoreVideos />
     </>
   );
 }

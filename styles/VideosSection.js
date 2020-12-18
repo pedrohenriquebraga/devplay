@@ -27,7 +27,9 @@ export const VideosScrollingCards = styled.div`
   /* Track */
   ::-webkit-scrollbar-track {
     width: 10px;
-    background: #eee;
+    background: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 8px;
   }
 
   /* Handle */

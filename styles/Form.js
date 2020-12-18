@@ -21,6 +21,11 @@ export const SearchForm = styled.form`
   }
 
   button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 43px;
     padding: 0.8rem 2.0rem;
     font-size: 1.8rem;
     outline: none;

@@ -6,6 +6,7 @@ function MyApp({ Component, pageProps }) {
   <>
     <Head>
       <title>DevPlay</title>
+      <meta name="description" content="Veja, publique e compartilhe vídeos de desenvolvedores de todo o mundo!" />
     </Head>
     <Component {...pageProps} />
   </>  

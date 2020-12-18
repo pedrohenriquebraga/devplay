@@ -1,22 +1,22 @@
-import {
-  VideoCard,
-  VideosScrollingCards,
-  VideoContent,
-  VideoSections,
-  VideoThumb,
-  SectionTitle,
-} from "../../styles/VideosSection";
-import Link from "next/link";
-import Image from "next/image";
-export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
+import { 
+    MoreVideosContainer, 
+    MoreVideoCard,
+    MoreVideoThumb,
+    MoreVideoContent, 
+    VideosCardContainer ,
+} from '../../styles/MoreVideos';
+import Link from 'next/link'
+import Image from 'next/image'
+
+function MoreVideos() {
   return (
-    <VideoSections>
-      <SectionTitle>{sectionTitle}</SectionTitle>
-      <VideosScrollingCards>
-        <VideoCard>
+    <MoreVideosContainer>
+        <h2>Mais vídeos</h2>
+        <VideosCardContainer>
+        <MoreVideoCard>
           <Link href="#">
             <a>
-              <VideoThumb>
+              <MoreVideoThumb>
                 <span className="videoDuration">18:35</span>
                 <Image
                   loading="lazy"
@@ -26,8 +26,8 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                   height={1080}
                   src="https://i.ytimg.com/vi/gq9uGdZCKxI/maxresdefault.jpg"
                 />
-              </VideoThumb>
-              <VideoContent>
+              </MoreVideoThumb>
+              <MoreVideoContent>
                 <h3 className="videoTitle">
                   Como aprender NodeJs e javascript em um vídeo de 5 minutos
                 </h3>
@@ -41,14 +41,14 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                 <Link href="#">
                   <a className="channelUrl">Umbler</a>
                 </Link>
-              </VideoContent>
+              </MoreVideoContent>
             </a>
           </Link>
-        </VideoCard>
-        <VideoCard>
+        </MoreVideoCard>
+        <MoreVideoCard>
           <Link href="#">
             <a>
-              <VideoThumb>
+              <MoreVideoThumb>
                 <span className="videoDuration">18:35</span>
                 <Image
                   loading="lazy"
@@ -58,9 +58,11 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                   height={1080}
                   src="https://i.ytimg.com/vi/gq9uGdZCKxI/maxresdefault.jpg"
                 />
-              </VideoThumb>
-              <VideoContent>
-                <h3 className="videoTitle">Como aprender NodeJs</h3>
+              </MoreVideoThumb>
+              <MoreVideoContent>
+                <h3 className="videoTitle">
+                  Como aprender NodeJs e javascript em um vídeo de 5 minutos
+                </h3>
                 <p className="videoDescription">
                   Neste vídeo eu irei introduzir você ao NodeJs, que fez o
                   JavaScript chegar em outro patamar. Será uma série de vídeos
@@ -71,15 +73,15 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                 <Link href="#">
                   <a className="channelUrl">Umbler</a>
                 </Link>
-              </VideoContent>
+              </MoreVideoContent>
             </a>
           </Link>
-        </VideoCard>
-        <VideoCard>
+        </MoreVideoCard>
+        <MoreVideoCard>
           <Link href="#">
             <a>
-              <VideoThumb>
-                <span className="videoDuration">18:47:35</span>
+              <MoreVideoThumb>
+                <span className="videoDuration">18:35</span>
                 <Image
                   loading="lazy"
                   quality={70}
@@ -88,9 +90,11 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                   height={1080}
                   src="https://i.ytimg.com/vi/gq9uGdZCKxI/maxresdefault.jpg"
                 />
-              </VideoThumb>
-              <VideoContent>
-                <h3 className="videoTitle">Como aprender NodeJs</h3>
+              </MoreVideoThumb>
+              <MoreVideoContent>
+                <h3 className="videoTitle">
+                  Como aprender NodeJs e javascript em um vídeo de 5 minutos
+                </h3>
                 <p className="videoDescription">
                   Neste vídeo eu irei introduzir você ao NodeJs, que fez o
                   JavaScript chegar em outro patamar. Será uma série de vídeos
@@ -101,14 +105,14 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                 <Link href="#">
                   <a className="channelUrl">Umbler</a>
                 </Link>
-              </VideoContent>
+              </MoreVideoContent>
             </a>
           </Link>
-        </VideoCard>
-        <VideoCard>
+        </MoreVideoCard>
+        <MoreVideoCard>
           <Link href="#">
             <a>
-              <VideoThumb>
+              <MoreVideoThumb>
                 <span className="videoDuration">18:35</span>
                 <Image
                   loading="lazy"
@@ -118,9 +122,11 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                   height={1080}
                   src="https://i.ytimg.com/vi/gq9uGdZCKxI/maxresdefault.jpg"
                 />
-              </VideoThumb>
-              <VideoContent>
-                <h3 className="videoTitle">Como aprender NodeJs</h3>
+              </MoreVideoThumb>
+              <MoreVideoContent>
+                <h3 className="videoTitle">
+                  Como aprender NodeJs e javascript em um vídeo de 5 minutos
+                </h3>
                 <p className="videoDescription">
                   Neste vídeo eu irei introduzir você ao NodeJs, que fez o
                   JavaScript chegar em outro patamar. Será uma série de vídeos
@@ -131,14 +137,14 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                 <Link href="#">
                   <a className="channelUrl">Umbler</a>
                 </Link>
-              </VideoContent>
+              </MoreVideoContent>
             </a>
           </Link>
-        </VideoCard>
-        <VideoCard>
+        </MoreVideoCard>
+        <MoreVideoCard>
           <Link href="#">
             <a>
-              <VideoThumb>
+              <MoreVideoThumb>
                 <span className="videoDuration">18:35</span>
                 <Image
                   loading="lazy"
@@ -148,9 +154,11 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                   height={1080}
                   src="https://i.ytimg.com/vi/gq9uGdZCKxI/maxresdefault.jpg"
                 />
-              </VideoThumb>
-              <VideoContent>
-                <h3 className="videoTitle">Como aprender NodeJs</h3>
+              </MoreVideoThumb>
+              <MoreVideoContent>
+                <h3 className="videoTitle">
+                  Como aprender NodeJs e javascript em um vídeo de 5 minutos
+                </h3>
                 <p className="videoDescription">
                   Neste vídeo eu irei introduzir você ao NodeJs, que fez o
                   JavaScript chegar em outro patamar. Será uma série de vídeos
@@ -161,14 +169,14 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                 <Link href="#">
                   <a className="channelUrl">Umbler</a>
                 </Link>
-              </VideoContent>
+              </MoreVideoContent>
             </a>
           </Link>
-        </VideoCard>
-        <VideoCard>
+        </MoreVideoCard>
+        <MoreVideoCard>
           <Link href="#">
             <a>
-              <VideoThumb>
+              <MoreVideoThumb>
                 <span className="videoDuration">18:35</span>
                 <Image
                   loading="lazy"
@@ -178,9 +186,11 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                   height={1080}
                   src="https://i.ytimg.com/vi/gq9uGdZCKxI/maxresdefault.jpg"
                 />
-              </VideoThumb>
-              <VideoContent>
-                <h3 className="videoTitle">Como aprender NodeJs</h3>
+              </MoreVideoThumb>
+              <MoreVideoContent>
+                <h3 className="videoTitle">
+                  Como aprender NodeJs e javascript em um vídeo de 5 minutos
+                </h3>
                 <p className="videoDescription">
                   Neste vídeo eu irei introduzir você ao NodeJs, que fez o
                   JavaScript chegar em outro patamar. Será uma série de vídeos
@@ -191,14 +201,14 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                 <Link href="#">
                   <a className="channelUrl">Umbler</a>
                 </Link>
-              </VideoContent>
+              </MoreVideoContent>
             </a>
           </Link>
-        </VideoCard>
-        <VideoCard>
+        </MoreVideoCard>
+        <MoreVideoCard>
           <Link href="#">
             <a>
-              <VideoThumb>
+              <MoreVideoThumb>
                 <span className="videoDuration">18:35</span>
                 <Image
                   loading="lazy"
@@ -208,9 +218,11 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                   height={1080}
                   src="https://i.ytimg.com/vi/gq9uGdZCKxI/maxresdefault.jpg"
                 />
-              </VideoThumb>
-              <VideoContent>
-                <h3 className="videoTitle">Como aprender NodeJs</h3>
+              </MoreVideoThumb>
+              <MoreVideoContent>
+                <h3 className="videoTitle">
+                  Como aprender NodeJs e javascript em um vídeo de 5 minutos
+                </h3>
                 <p className="videoDescription">
                   Neste vídeo eu irei introduzir você ao NodeJs, que fez o
                   JavaScript chegar em outro patamar. Será uma série de vídeos
@@ -221,14 +233,14 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                 <Link href="#">
                   <a className="channelUrl">Umbler</a>
                 </Link>
-              </VideoContent>
+              </MoreVideoContent>
             </a>
           </Link>
-        </VideoCard>
-        <VideoCard>
+        </MoreVideoCard>
+        <MoreVideoCard>
           <Link href="#">
             <a>
-              <VideoThumb>
+              <MoreVideoThumb>
                 <span className="videoDuration">18:35</span>
                 <Image
                   loading="lazy"
@@ -238,10 +250,12 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                   height={1080}
                   src="https://i.ytimg.com/vi/gq9uGdZCKxI/maxresdefault.jpg"
                 />
-              </VideoThumb>
-              <VideoContent>
-                <h3 class="videoTitle">Como aprender NodeJs</h3>
-                <p class="videoDescription">
+              </MoreVideoThumb>
+              <MoreVideoContent>
+                <h3 className="videoTitle">
+                  Como aprender NodeJs e javascript em um vídeo de 5 minutos
+                </h3>
+                <p className="videoDescription">
                   Neste vídeo eu irei introduzir você ao NodeJs, que fez o
                   JavaScript chegar em outro patamar. Será uma série de vídeos
                   totalmente voltados para iniciantes
@@ -251,13 +265,13 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                 <Link href="#">
                   <a className="channelUrl">Umbler</a>
                 </Link>
-              </VideoContent>
+              </MoreVideoContent>
             </a>
           </Link>
-        </VideoCard>
-      </VideosScrollingCards>
-    </VideoSections>
-  );
+        </MoreVideoCard>
+        </VideosCardContainer>
+    </MoreVideosContainer>
+  )
 }
 
-// export default VideosSectionsContainerComp;
+export default MoreVideos;
