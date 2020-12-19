@@ -18,13 +18,9 @@ export const FeaturedVideoContainer = styled.section`
     }
 
     h1 {
-        font-size: 3.0rem;
+        font-size: 2.8rem;
     }
 
-    p {
-        font-size: 2.0rem;
-        margin-bottom: 1.0rem;
-    }
     .openVideo {
         text-decoration: none;
         color: #000;
