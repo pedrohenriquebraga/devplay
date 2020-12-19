@@ -11,7 +11,7 @@ export const VideosSectionsContainer = styled.main`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 3rem;
+  font-size: 2rem;
 `;
 
 export const VideosScrollingCards = styled.div`
