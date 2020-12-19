@@ -43,7 +43,7 @@ export const FeaturedVideo = styled.div`
         width: 95%;
 
         .videoTitle {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             margin: 5px 0;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -54,6 +54,7 @@ export const FeaturedVideo = styled.div`
         }
 
         .videoDescription {
+            font-size: 1.6rem;
             margin-bottom: 0;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -64,17 +65,20 @@ export const FeaturedVideo = styled.div`
         }
 
         .videoViews {
+            font-size: 1.6rem;
             color: #777;
             margin-bottom: 0;
         }
 
         .videoDate {
+            font-size: 1.6rem;
             margin: 0;
             margin-top: 0.1rem;
             color: #666;
         }
 
         .videoAuthor {
+            font-size: 1.6rem;
             text-decoration: none;
             font-size: 1.8rem;
         }
