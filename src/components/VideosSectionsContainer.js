@@ -240,8 +240,8 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
                 />
               </VideoThumb>
               <VideoContent>
-                <h3 class="videoTitle">Como aprender NodeJs</h3>
-                <p class="videoDescription">
+                <h3 className="videoTitle">Como aprender NodeJs</h3>
+                <p className="videoDescription">
                   Neste vídeo eu irei introduzir você ao NodeJs, que fez o
                   JavaScript chegar em outro patamar. Será uma série de vídeos
                   totalmente voltados para iniciantes

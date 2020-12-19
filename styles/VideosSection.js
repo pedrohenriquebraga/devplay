@@ -12,12 +12,15 @@ export const VideosSectionsContainer = styled.main`
 
 export const SectionTitle = styled.h2`
   font-size: 2.3rem;
+  font-family: 'Nunito', sans-serif;
 `;
 
 export const VideosScrollingCards = styled.div`
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  background-color: #eee;
+  border-radius: 8px 8px 0 0;
 
   ::-webkit-scrollbar {
     width: 10px;
@@ -54,9 +57,10 @@ export const VideoSections = styled.section`
 `;
 
 export const VideoThumb = styled.figcaption`
-position: relative;
+  position: relative;
   width: 100%;
   .videoDuration {
+    z-index: 3;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -85,13 +89,14 @@ export const VideoCard = styled.div`
     width: 100%;
     border-radius: 8px;
     position: absolute;
-    z-index: -1;
+    /* z-index: -1; */
   }
 `;
 
 export const VideoContent = styled.div`
   .videoTitle {
     font-size: 1.7rem;
+    font-family: 'Nunito', sans-serif;
     text-overflow: ellipsis;
     display: -webkit-box;
     overflow: hidden;

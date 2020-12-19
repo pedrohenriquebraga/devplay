@@ -6,7 +6,7 @@ export const FeaturedVideoContainer = styled.section`
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    background-color: #c9ccff;
+    background-color: #46aefa66;
 
     margin-top: 2.5rem;
     padding: 5.0rem;
@@ -19,6 +19,8 @@ export const FeaturedVideoContainer = styled.section`
 
     h1 {
         font-size: 2.8rem;
+        text-align: center;
+        margin-bottom: 5.0rem;
     }
 
     .openVideo {
@@ -34,6 +36,7 @@ export const FeaturedVideo = styled.div`
     flex-direction: column;
 
     width: 95%;
+    max-width: 1000px;
 
     div {
         width: 95%;
@@ -62,7 +65,7 @@ export const FeaturedVideo = styled.div`
 
         .videoViews {
             font-size: 1.6rem;
-            color: #777;
+            color: #555;
             margin-bottom: 0;
         }
 
@@ -70,13 +73,13 @@ export const FeaturedVideo = styled.div`
             font-size: 1.6rem;
             margin: 0;
             margin-top: 0.1rem;
-            color: #666;
+            color: #555;
         }
 
         .videoAuthor {
             font-size: 1.6rem;
+            font-weight: 600;
             text-decoration: none;
-            font-size: 1.8rem;
         }
     }
 `

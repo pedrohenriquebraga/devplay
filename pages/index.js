@@ -24,7 +24,7 @@ export default function Home() {
           </button>
         </div>
       </SearchForm>
-        <FeaturedVideoComp />
+      <FeaturedVideoComp />
       <VideosSectionsContainer>
         <VideosSectionsContainerComp sectionTitle="Javascript" />
         <VideosSectionsContainerComp sectionTitle="PHP" />
