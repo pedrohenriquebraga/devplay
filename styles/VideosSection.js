@@ -100,7 +100,7 @@ export const VideoContent = styled.div`
   }
 
   .videoDescription {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-overflow: ellipsis;
     display: -webkit-box;
     overflow: hidden;
