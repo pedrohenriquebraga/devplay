@@ -63,6 +63,7 @@ position: relative;
     margin: 0 0.8rem 0.8rem 0;
     justify-content: flex-end;
     align-items: flex-end;
+    text-align: center;
     background-color: #000;
     color: #fff;
     font-size: 1.4rem;
