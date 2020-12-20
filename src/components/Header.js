@@ -7,13 +7,7 @@ function Header() {
     <HeaderMenu>
       <Link href="/">
         <a>
-        <Image
-          src="/logo.png"
-          width={60}
-          height={60}
-          layout="fixed"
-          quality={60}
-        /> DevPlay
+          DevPlay
         </a>
       </Link>
     </HeaderMenu>
