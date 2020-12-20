@@ -7,6 +7,7 @@ export const HeaderMenu = styled.header`
   /* background-image: linear-gradient(to left, #a3bded 0%, #6991c7 100%); */
   height: 8.0rem;
   padding-left: 2.8rem;
+  margin-bottom: 1.7rem;
   a {
     display: flex;
     align-items: center;
@@ -19,7 +20,6 @@ export const HeaderMenu = styled.header`
     img {
       width: 100%;
       transform: rotate(30deg);
-      filter: sepia(100%);
     }
   }
 `;

@@ -13,6 +13,7 @@ export const VideosSectionsContainer = styled.main`
 export const SectionTitle = styled.h2`
   font-size: 2.3rem;
   font-family: 'Nunito', sans-serif;
+  margin-bottom: 0.8rem;
 `;
 
 export const VideosScrollingCards = styled.div`
@@ -52,7 +53,6 @@ export const VideoSections = styled.section`
   margin-bottom: 6rem;
   .sectionTitle {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
   }
 `;
 

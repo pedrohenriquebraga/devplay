@@ -10,6 +10,7 @@ export const SearchForm = styled.form`
 
   h2 {
     font-size: 2.0rem;
+    margin-bottom: 1.7rem;
   }
 
   div {

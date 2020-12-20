@@ -20,7 +20,7 @@ export const FeaturedVideoContainer = styled.section`
     h1 {
         font-size: 2.8rem;
         text-align: center;
-        margin-bottom: 5.0rem;
+        margin-bottom: 1.7rem;
     }
 
     .openVideo {

@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <Header />
       <SearchForm onSubmit={handleSubmit}>
-        <h2>O que você precisa hoje?</h2> <br />
+        <h2>Do que você precisa hoje?</h2> <br />
         <div>
           <input
             type="search"
