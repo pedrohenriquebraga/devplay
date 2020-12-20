@@ -1,5 +1,5 @@
 import "../styles/global.css"
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
   return (

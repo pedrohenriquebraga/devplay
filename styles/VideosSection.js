@@ -20,7 +20,7 @@ export const VideosScrollingCards = styled.div`
   flex-wrap: nowrap;
   overflow-x: auto;
   background-color: #eee;
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
 
   ::-webkit-scrollbar {
     width: 10px;
@@ -89,7 +89,6 @@ export const VideoCard = styled.div`
     width: 100%;
     border-radius: 8px;
     position: absolute;
-    /* z-index: -1; */
   }
 `;
 
