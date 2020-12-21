@@ -1,4 +1,21 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const FeaturedEnter = keyframes`
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    75% {
+        opacity: 0.;
+        transform: translateX(35%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+`
 
 export const FeaturedVideoContainer = styled.section`
     display: flex;
@@ -6,13 +23,13 @@ export const FeaturedVideoContainer = styled.section`
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    background-color: #46aefa66;
+    background-color: #48c6ef66;
 
     margin-top: 2.5rem;
-    padding: 5.0rem;
+    padding: 5.0rem 1.0rem;
 
     .videoThumb {
-        width: 95%;
+        width: 100%;
         object-fit: cover;
         border-radius: 12px;
     }
@@ -34,16 +51,17 @@ export const FeaturedVideo = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation: ${FeaturedEnter} 1.5s ease-out;
 
-    width: 95%;
+    width: 100%;
     max-width: 1000px;
 
     div {
-        width: 95%;
+        width: 100%;
 
         .videoTitle {
             font-size: 1.8rem;
-            margin: 5px 0;
+            margin: 0.5rem 0;
             text-overflow: ellipsis;
             display: -webkit-box;
             overflow: hidden;
