@@ -25,6 +25,8 @@ export const FeaturedVideoContainer = styled.section`
     width: 100%;
     background-color: #48c6ef66;
 
+    overflow: hidden;
+
     margin-top: 2.5rem;
     padding: 5.0rem 1.0rem;
 

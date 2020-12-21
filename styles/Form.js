@@ -55,7 +55,7 @@ export const SearchForm = styled.form`
     transition: 500ms;
     border-radius: 12px 0 0 12px;
     border: 1px solid #ddd;
-    :focus {
+    :focus, :hover {
       width: 60%;
       border-radius: 8px 0 0 8px;
     }
