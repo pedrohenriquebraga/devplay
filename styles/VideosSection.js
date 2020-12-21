@@ -78,7 +78,7 @@ export const VideoThumb = styled.figcaption`
 
 export const VideoCard = styled.div`
   flex: 0 0 auto;
-  width: 35rem;
+  width: 28rem;
   margin: 0 1rem;
   padding: 1.5rem;
   transition: 200ms;
