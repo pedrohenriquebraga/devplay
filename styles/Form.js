@@ -26,7 +26,7 @@ export const SearchForm = styled.form`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 43px;
+    height: 4.2rem;
     padding: 0.8rem 2.0rem;
     font-size: 1.8rem;
     outline: none;
@@ -55,10 +55,6 @@ export const SearchForm = styled.form`
     transition: 500ms;
     border-radius: 12px 0 0 12px;
     border: 1px solid #ddd;
-    :focus {
-      width: 60%;
-      border-radius: 8px 0 0 8px;
-    }
 
     ::-webkit-input-placeholder {
       color: #000;
