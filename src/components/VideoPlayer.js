@@ -154,7 +154,7 @@ function Player() {
         </VideoControllers>
         <Video
           ref={video}
-          src="https://github.com/pedrohenriquebraga/devplay/blob/main/public/Micro%20Frontends_%20Node.js_%20Unform_%20StyleSheets_%20Sty(240P).mp4"
+          src="../../public/Micro Frontends_ Node.js_ Unform_ StyleSheets_ Sty(240P).mp4"
           onLoadedMetadata={() => setVideoInfos()}
           onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
           onCanPlay={() => setPlayPause()}
