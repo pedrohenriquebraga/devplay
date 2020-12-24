@@ -5,118 +5,162 @@ import {
   VideoVolumeContainer,
 } from "../../styles/VideoPlayer";
 
-import { 
-  FaPlayCircle, 
-  FaPauseCircle, 
+import {
+  FaPlay,
+  FaPause,
   FaVolumeUp,
-  FaVolumeMute, 
+  FaVolumeMute,
   FaExpand,
-  FaSyncAlt } from "react-icons/fa";
+  FaCompress,
+  FaSyncAlt,
+} from "react-icons/fa";
 import { useState, useRef } from "react";
 
 function Player() {
-  const [ play, setPlay ] = useState(true);
-  const [ muted, setMuted ] = useState(false);
-  const [ loop, setLoop ] = useState(false);
-  const [ duration, setDuration ] = useState('0');
-  const [ currentTime, setCurrentTime ] = useState('0');
-  const [ volume, setVolume ] = useState(50)
+  const [play, setPlay] = useState(false);
+  const [muted, setMuted] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
+  const [loop, setLoop] = useState(false);
+  const [duration, setDuration] = useState("0");
+  const [currentTime, setCurrentTime] = useState("0");
+  const [volume, setVolume] = useState(50);
   const video = useRef("video");
+  const videoPlayer = useRef("videoPlayer");
+
+  function formatTime(time = 0) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+
+    return `${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
+  }
 
   function setVideoInfos() {
-    setDuration(video.current.duration)
+    return setDuration(video.current.duration);
+  }
+
+  function setSeekBar(time) {
+    setCurrentTime(time);
+    video.current.currentTime = time;
+    setPlayPause();
   }
 
   function setPlayPause() {
     if (play) {
       setPlay(false);
-      return video.current.pause()
+      return video.current.pause();
     }
-    setPlay(true)
+    setPlay(true);
     return video.current.play();
   }
 
   function setCurrentVolume(e) {
-    setVolume(e.target.value)
-    setMuted(false)
-    video.current.muted = false
-    return video.current.volume = volume / 100
+    setVolume(e.target.value);
+    setMuted(false);
+    video.current.muted = false;
+    return (video.current.volume = volume / 100);
   }
 
   function setMute() {
     if (video.current.muted) {
-      setMuted(false)
-      return video.current.muted = false
+      setMuted(false);
+      return (video.current.muted = false);
     }
-    setMuted(true)
-    return video.current.muted = true
+    setMuted(true);
+    return (video.current.muted = true);
+  }
+
+  async function setVideoFullscreen() {
+    if (!fullscreen) {
+      setFullscreen(true);
+      if (videoPlayer.current.requestFullscreen) {
+        return await videoPlayer.current.requestFullscreen();
+      } else if (videoPlayer.current.webkitRequestFullscreen) {
+        return await videoPlayer.current.webkitRequestFullscreen();
+      } else if (videoPlayer.current.msRequestFullscreen) {
+        return await videoPlayer.current.msRequestFullscreen();
+      }
+    } else {
+      setFullscreen(false);
+      if (document.exitFullscreen) {
+        return await document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        return await document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        return await document.msExitFullscreen();
+      }
+    }
   }
 
   function setVideoLoop() {
     if (video.current.loop) {
-      setLoop(false)
-      return video.current.loop = false
+      setLoop(false);
+      return (video.current.loop = false);
     }
 
-    setLoop(true)
-    return video.current.loop = true
+    setLoop(true);
+    return (video.current.loop = true);
+  }
+
+  function setEnded() {
+    if (!loop) {
+      setCurrentTime("0");
+      return (video.current.currentTime = 0);
+    }
   }
 
   return (
     <VideoPlayer>
-      <VideoControllers>
-        <button 
-          className="videoPlay"
-          onClick={setPlayPause}
-        >
-          {play ? <FaPauseCircle /> : <FaPlayCircle />}
-        </button>
-        <div className="VideoBottomControllers">
-          <div class="seekbarContainer">
-            <span>00:00/12:00</span>
-            <input
-              type="range"
-              min="0"
-              max={duration}
-              value={currentTime}
-              className="seekBar"
-            />
-          </div>
-          <VideoVolumeContainer>
-            <button 
-              onClick={setMute}
-              className="volumeButton"
-            >
-              { muted ? (<FaVolumeMute />) : (<FaVolumeUp />) }
-            </button>
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value={volume}
-              onChange={e => setCurrentVolume(e)}
-              className="volumeRange"
-            />
+      <div class="player" ref={videoPlayer}>
+        <VideoControllers>
+          <button className="videoPlay" onClick={setPlayPause}>
+            {play ? <FaPause /> : <FaPlay />}
+          </button>
+          <div className="VideoBottomControllers">
+            <div class="seekbarContainer">
+              <span>
+                {formatTime(currentTime)}/{formatTime(duration)}
+              </span>
+              <input
+                type="range"
+                min="0"
+                max={duration}
+                value={currentTime}
+                onChange={(e) => setSeekBar(e.target.value)}
+                className="seekBar"
+              />
+            </div>
+            <VideoVolumeContainer>
+              <button onClick={setMute} className="volumeButton">
+                {muted ? <FaVolumeMute /> : <FaVolumeUp />}
+              </button>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={volume}
+                onChange={(e) => setCurrentVolume(e)}
+                className="volumeRange"
+              />
 
-            <button className="fullscreenButton">
-              <FaExpand />
-            </button>
-            <button 
-              className="loopButton"
-              onClick={setVideoLoop}
-            >
-              <FaSyncAlt color={loop ? '#37b5de' : '#fff'} />
-            </button>
-          </VideoVolumeContainer>
-        </div>
-      </VideoControllers>
-      <Video
-        ref={video}
-        src="https://www.w3schools.com/html/mov_bbb.mp4"
-        onLoadedMetadata={() => setVideoInfos()}
-        onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
-        autoPlay
-      />
+              <button className="fullscreenButton" onClick={setVideoFullscreen}>
+                {!fullscreen ? <FaExpand /> : <FaCompress />}
+              </button>
+              
+              <button className="loopButton" onClick={setVideoLoop}>
+                <FaSyncAlt color={loop ? "#37b5de" : "#fff"} />
+              </button>
+            </VideoVolumeContainer>
+          </div>
+        </VideoControllers>
+        <Video
+          ref={video}
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          onLoadedMetadata={() => setVideoInfos()}
+          onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
+          onCanPlay={() => setPlayPause()}
+          onEnded={() => setEnded()}
+        />
+      </div>
     </VideoPlayer>
   );
 }
