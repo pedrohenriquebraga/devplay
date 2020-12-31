@@ -1,4 +1,12 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const LoadingAnimate = keyframes`
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg)
+  }
+`
 
 export const VideoPlayerContainer = styled.div`
   width: 100vw;
@@ -19,7 +27,7 @@ export const VideoControllers = styled.div`
   justify-content: space-between;
   flex-direction: column;
   position: absolute;
-  background: radial-gradient(#00000055, #00000011);
+  background: radial-gradient(#00000066, #00000033);
   width: 100%;
   height: 99%;
   opacity: 0;
@@ -39,6 +47,12 @@ export const VideoControllers = styled.div`
     font-size: 3rem;
     color: #fff;
     transition: 200ms;
+
+    img.loading {
+      width: 50px;
+      height: 50px;
+      animation: ${LoadingAnimate} 1s infinite linear;
+    }
 
     :hover {
         transform: scale(1.2);

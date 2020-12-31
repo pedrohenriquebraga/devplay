@@ -8,6 +8,7 @@ import {
 import {
   FaPlay,
   FaPause,
+  FaAws,
   FaVolumeUp,
   FaVolumeMute,
   FaExpand,
@@ -17,8 +18,9 @@ import {
 import { useState, useRef } from "react";
 
 function Player() {
-  const [play, setPlay] = useState(false);
-  const [muted, setMuted] = useState(false);
+  const [play, setPlay] = useState(true);
+  const [ loading, setLoading ] = useState(false);
+  const [muted, setMuted] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
   const [loop, setLoop] = useState(false);
   const [duration, setDuration] = useState("0");
@@ -27,15 +29,16 @@ function Player() {
   const video = useRef("video");
   const videoPlayer = useRef("videoPlayer");
 
+  console.log(video.current.duration);
+
   function formatTime(time = 0) {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
+    const minutes = Math.floor(Number(time) / 60);
+    const seconds = Math.floor(Number(time) % 60);
 
     return `${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
   }
 
   function setVideoInfos() {
-    return setDuration(video.current.duration);
   }
 
   function setSeekBar(time) {
@@ -45,12 +48,24 @@ function Player() {
   }
 
   function setPlayPause() {
-    if (play) {
+    setLoadingVideo()
+    if (play && !loading) {
       setPlay(false);
       return video.current.pause();
+    } else if (!play && !loading) {
+      setPlay(true);
+      return video.current.play();
     }
-    setPlay(true);
-    return video.current.play();
+  }
+
+  function setLoadingVideo() {
+    console.log(`Carregando... Veja o evento: ${video.current.waiting}`);
+    const networkState = video.current.networkState
+    if (video.current.waiting || networkState == 0 || networkState == 2) {
+      return setLoading(true);
+    } else {
+      return setLoading(false);
+    }
   }
 
   function setCurrentVolume(e) {
@@ -110,20 +125,24 @@ function Player() {
 
   return (
     <VideoPlayer>
-      <div class="player" ref={videoPlayer}>
+      <div className="player" ref={videoPlayer}>
         <VideoControllers>
           <button className="videoPlay" onClick={setPlayPause}>
-            {play ? <FaPause /> : <FaPlay />}
+            { 
+              play && !loading ? 
+              <FaPause /> : 
+              !play && !loading ? (<FaPlay />) : <img src="/loading.svg" className="loading" /> 
+            }
           </button>
           <div className="VideoBottomControllers">
             <div class="seekbarContainer">
               <span>
-                {formatTime(currentTime)}/{formatTime(duration)}
+                {formatTime(currentTime)}/{formatTime(video.current.duration)}
               </span>
               <input
                 type="range"
                 min="0"
-                max={duration}
+                max={video.current.duration}
                 value={currentTime}
                 onChange={(e) => setSeekBar(e.target.value)}
                 className="seekBar"
@@ -155,9 +174,13 @@ function Player() {
         <Video
           ref={video}
           src="/Micro Frontends_ Node.js_ Unform_ StyleSheets_ Sty(240P).mp4"
-          onLoadedMetadata={() => setVideoInfos()}
+          poster='https://i.ytimg.com/vi/gq9uGdZCKxI/maxresdefault.jpg'
           onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
           onCanPlay={() => setPlayPause()}
+          autoPlay
+          muted
+          onPlaying={() => setLoading(false)}
+          onWaiting={() => setLoading(true)}
           onEnded={() => setEnded()}
         />
       </div>

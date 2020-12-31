@@ -14,7 +14,7 @@ export function VideosSectionsContainerComp({ sectionTitle = "Mais vídeos" }) {
       <SectionTitle>{sectionTitle}</SectionTitle>
       <VideosScrollingCards>
         <VideoCard>
-          <Link href="#">
+          <Link href="/watch?v=82ehb6ge">
             <a>
               <VideoThumb>
                 <span className="videoDuration">18:35</span>
