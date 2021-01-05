@@ -14,10 +14,8 @@ export const VideoPlayerContainer = styled.div`
 export const VideoPlayer = styled.div`
   position: relative;
   width: 80%;
-  margin: auto;
-  margin-top: 2rem;
 
-  @media (max-width: 320px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -34,6 +32,7 @@ export const VideoControllers = styled.div`
   z-index: 1000;
   transition: 200ms;
   :hover {
+    display: flex;
     opacity: 1;
   }
 
@@ -47,10 +46,13 @@ export const VideoControllers = styled.div`
     font-size: 3rem;
     color: #fff;
     transition: 200ms;
+    background: transparent;
+    user-select: none;
+
 
     img.loading {
-      width: 50px;
-      height: 50px;
+      width: 5.0rem;
+      height: 5.0rem;
       animation: ${LoadingAnimate} 1s infinite linear;
     }
 
@@ -62,7 +64,6 @@ export const VideoControllers = styled.div`
   .VideoBottomControllers {
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
@@ -98,7 +99,7 @@ export const VideoControllers = styled.div`
       }
 
       span {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 600;
         color: #fff;
         margin-right: 1rem;

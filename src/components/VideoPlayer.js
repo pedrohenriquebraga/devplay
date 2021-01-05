@@ -5,10 +5,11 @@ import {
   VideoVolumeContainer,
 } from "../../styles/VideoPlayer";
 
+import { formatTime } from '../../utils/formatTime'
+
 import {
   FaPlay,
   FaPause,
-  FaAws,
   FaVolumeUp,
   FaVolumeMute,
   FaExpand,
@@ -31,13 +32,6 @@ function Player() {
 
   console.log(video.current.duration);
 
-  function formatTime(time = 0) {
-    const minutes = Math.floor(Number(time) / 60);
-    const seconds = Math.floor(Number(time) % 60);
-
-    return `${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
-  }
-
   function setVideoInfos() {
   }
 
@@ -48,7 +42,6 @@ function Player() {
   }
 
   function setPlayPause() {
-    setLoadingVideo()
     if (play && !loading) {
       setPlay(false);
       return video.current.pause();
@@ -58,9 +51,9 @@ function Player() {
     }
   }
 
-  function setLoadingVideo() {
-    console.log(`Carregando... Veja o evento: ${video.current.waiting}`);
-    const networkState = video.current.networkState
+  function setLoadingVideo(networkState = 1) {
+    if (!networkState) return;
+
     if (video.current.waiting || networkState == 0 || networkState == 2) {
       return setLoading(true);
     } else {
@@ -163,7 +156,7 @@ function Player() {
 
               <button className="fullscreenButton" onClick={setVideoFullscreen}>
                 {!fullscreen ? <FaExpand /> : <FaCompress />}
-              </button>
+            </button>
               
               <button className="loopButton" onClick={setVideoLoop}>
                 <FaSyncAlt color={loop ? "#37b5de" : "#fff"} />
@@ -180,7 +173,7 @@ function Player() {
           autoPlay
           muted
           onPlaying={() => setLoading(false)}
-          onWaiting={() => setLoading(true)}
+          onWaiting={(e) => setLoadingVideo(e.currentTarget.networkState)}
           onEnded={() => setEnded()}
         />
       </div>
