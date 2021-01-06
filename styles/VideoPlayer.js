@@ -6,10 +6,14 @@ const LoadingAnimate = keyframes`
   } to {
     transform: rotate(360deg)
   }
-`
+`;
 
 export const VideoPlayerContainer = styled.div`
-  width: 100vw;
+  width: 100%;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    margin-top: -1.7rem;
+  }
 `;
 export const VideoPlayer = styled.div`
   position: relative;
@@ -49,15 +53,14 @@ export const VideoControllers = styled.div`
     background: transparent;
     user-select: none;
 
-
     img.loading {
-      width: 5.0rem;
-      height: 5.0rem;
+      width: 5rem;
+      height: 5rem;
       animation: ${LoadingAnimate} 1s infinite linear;
     }
 
     :hover {
-        transform: scale(1.2);
+      transform: scale(1.2);
     }
   }
 
@@ -74,6 +77,13 @@ export const VideoControllers = styled.div`
       padding: 0.2rem;
       margin: 0 1.5rem;
       transition: 200ms;
+    }
+
+    .fullscreenButton {
+      @media (min-width: 768px) {
+        display: block;
+        visibility: visible;
+      }
     }
 
     .loopButton {
@@ -222,7 +232,7 @@ export const VideoVolumeContainer = styled.div`
     margin-bottom: 0.3rem;
     :hover {
       color: #37b5de;
-        transform: scale(1.2);
+      transform: scale(1.2);
     }
   }
 

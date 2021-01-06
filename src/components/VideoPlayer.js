@@ -21,7 +21,7 @@ import { useState, useRef } from "react";
 function Player() {
   const [play, setPlay] = useState(true);
   const [ loading, setLoading ] = useState(false);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [loop, setLoop] = useState(false);
   const [duration, setDuration] = useState("0");
@@ -102,17 +102,22 @@ function Player() {
   function setVideoLoop() {
     if (video.current.loop) {
       setLoop(false);
-      return (video.current.loop = false);
+      return video.current.loop = false
+    } else {
+      setLoop(true);
+      return video.current.loop = true
     }
-
-    setLoop(true);
-    return (video.current.loop = true);
   }
 
   function setEnded() {
-    if (!loop) {
-      setCurrentTime("0");
-      return (video.current.currentTime = 0);
+    if (!video.current.loop) {
+      setPlayPause()
+      setCurrentTime("0")
+      return video.current.currentTime = 0;
+    } else {
+      setPlayPause()
+      setCurrentTime("0")
+      return setPlayPause()
     }
   }
 
@@ -158,7 +163,7 @@ function Player() {
                 {!fullscreen ? <FaExpand /> : <FaCompress />}
             </button>
               
-              <button className="loopButton" onClick={setVideoLoop}>
+              <button className="loopButton" onClick={() => setVideoLoop()}>
                 <FaSyncAlt color={loop ? "#37b5de" : "#fff"} />
               </button>
             </VideoVolumeContainer>
@@ -169,9 +174,7 @@ function Player() {
           src="/Micro Frontends_ Node.js_ Unform_ StyleSheets_ Sty(240P).mp4"
           poster='https://i.ytimg.com/vi/gq9uGdZCKxI/maxresdefault.jpg'
           onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
-          onCanPlay={() => setPlayPause()}
           autoPlay
-          muted
           onPlaying={() => setLoading(false)}
           onWaiting={(e) => setLoadingVideo(e.currentTarget.networkState)}
           onEnded={() => setEnded()}
