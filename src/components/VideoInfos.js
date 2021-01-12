@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ShareModal from './Modals/ShareModal'
 import { BiLike, BiDislike, BiShare } from "react-icons/bi";
 import { AiOutlineWarning } from "react-icons/ai";
 import { MdDateRange, MdPeopleOutline } from "react-icons/md";
@@ -14,6 +15,7 @@ function VideoInfos() {
 
   return (
     <>
+      <ShareModal />
       <VideoTitle>
         Como migrar um projeto de HTML/CSS para ReactJs de forma fácil?
       </VideoTitle>

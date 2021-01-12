@@ -30,8 +30,6 @@ function Player() {
   const video = useRef("video");
   const videoPlayer = useRef("videoPlayer");
 
-  console.log(video.current.duration);
-
   function setVideoInfos() {
   }
 
@@ -122,10 +120,13 @@ function Player() {
   }
 
   return (
-    <VideoPlayer>
+    <VideoPlayer >
       <div className="player" ref={videoPlayer}>
         <VideoControllers>
-          <button className="videoPlay" onClick={setPlayPause}>
+          <button
+            title="Play/Pause" 
+            className="videoPlay" 
+            onClick={setPlayPause}>
             { 
               play && !loading ? 
               <FaPause /> : 
@@ -147,11 +148,15 @@ function Player() {
               />
             </div>
             <VideoVolumeContainer>
-              <button onClick={setMute} className="volumeButton">
+              <button
+                title="Silenciar/Ativar Som" 
+                onClick={setMute} 
+                className="volumeButton">
                 {muted ? <FaVolumeMute /> : <FaVolumeUp />}
               </button>
               <input
                 type="range"
+                title={`Volume: ${volume}`}
                 min="0"
                 max="100"
                 value={volume}
@@ -159,11 +164,17 @@ function Player() {
                 className="volumeRange"
               />
 
-              <button className="fullscreenButton" onClick={setVideoFullscreen}>
+              <button 
+                title="Tela Cheia"
+                className="fullscreenButton" 
+                onClick={setVideoFullscreen}>
                 {!fullscreen ? <FaExpand /> : <FaCompress />}
             </button>
               
-              <button className="loopButton" onClick={() => setVideoLoop()}>
+              <button 
+                title="Repetir"
+                className="loopButton" 
+                onClick={() => setVideoLoop()}>
                 <FaSyncAlt color={loop ? "#37b5de" : "#fff"} />
               </button>
             </VideoVolumeContainer>
